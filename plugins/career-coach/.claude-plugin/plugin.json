@@ -1,0 +1,18 @@
+{
+  "name": "career-coach",
+  "displayName": "Career Coach",
+  "version": "1.0.0",
+  "description": "Career coach and job-search assistant: tracks Soham's own growth across every project (patterns in checkpoint-interview performance, recurring gaps, skills demonstrated) and coaches the actual job search (JD fit review, application tracking, job discovery). Install once at user scope, not per project. Run directly with 'claude --agent career-coach' rather than delegating to it.",
+  "author": {
+    "name": "Soham Dharne",
+    "email": "sohamwork1523@gmail.com"
+  },
+  "userConfig": {
+    "target_role": {
+      "type": "string",
+      "title": "Target role",
+      "description": "What you're building toward, in plain language - used to judge whether a pattern actually matters for the goal, not just noted for its own sake.",
+      "default": "agentic AI engineering roles at UK/India startups"
+    }
+  }
+}

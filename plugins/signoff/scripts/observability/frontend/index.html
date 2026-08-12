@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signoff · observability</title>
+<link rel="stylesheet" href="/assets/styles.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:13px}
+  a{color:var(--color-accent-700)} a:hover{color:var(--color-accent-900)}
+  @keyframes livepulse{0%,100%{opacity:1}50%{opacity:.2}}
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--color-text) 22%,transparent)}
+  ::-webkit-scrollbar-track{background:transparent}
+  .muted{color:color-mix(in srgb,var(--color-text) 55%,transparent)}
+  .mono{font-variant-numeric:tabular-nums}
+  #nav button.active{background:var(--color-bg);border-color:var(--color-divider);color:var(--color-text)}
+  #nav button{background:transparent;border-color:transparent;color:color-mix(in srgb,var(--color-text) 55%,transparent)}
+  table.atk-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  table.atk-table th{text-align:left;padding:7px 9px;font-family:var(--font-heading);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:color-mix(in srgb,var(--color-text) 60%,transparent);font-weight:600;border-bottom:1px solid var(--color-text)}
+  table.atk-table td{padding:6px 9px;border-bottom:1px solid color-mix(in srgb,var(--color-text) 10%,transparent)}
+  table.atk-table tr.clickable{cursor:pointer}
+  table.atk-table tr.clickable:hover{background:color-mix(in srgb,var(--color-accent) 9%,transparent)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="/assets/app.js"></script>
+</body>
+</html>

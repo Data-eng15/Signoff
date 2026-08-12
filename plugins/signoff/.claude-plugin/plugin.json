@@ -1,0 +1,48 @@
+{
+  "name": "signoff",
+  "displayName": "Signoff",
+  "version": "1.0.0",
+  "description": "DevOps/developer/tester subagent team, guardrail hooks, and a project bootstrap skill - every stage requires a real, tested signoff before the next one starts. One install per new project, configured with a few parameters instead of copy-pasted files.",
+  "author": {
+    "name": "Soham Dharne",
+    "email": "sohamwork1523@gmail.com"
+  },
+  "userConfig": {
+    "project_slug": {
+      "type": "string",
+      "title": "Project slug",
+      "description": "Short project identifier used in resource tags and branch names (e.g. 'client-x-poc').",
+      "required": true
+    },
+    "cloud_hint": {
+      "type": "string",
+      "title": "Cloud provider/region hint (optional)",
+      "description": "Leave blank in almost every case. cloud-engineer determines the provider and region during feasibility analysis and records it in docs/cost-estimate.md - that's the actual source of truth downstream agents read. Only set this if you already know for certain (e.g. a client contractually requires AWS in a specific region) and want cloud-engineer to treat it as a fixed constraint rather than something to evaluate.",
+      "default": ""
+    },
+    "guardrail_level": {
+      "type": "string",
+      "title": "Guardrail level",
+      "description": "'standard' or 'strict'. Strict raises the bar the developer and tester subagents hold work to (e.g. required test coverage, mandatory rollback docs).",
+      "default": "standard"
+    },
+    "frontend_stack": {
+      "type": "string",
+      "title": "Frontend stack",
+      "description": "Framework the frontend-developer subagent should default to (e.g. 'react', 'vue').",
+      "default": "react"
+    },
+    "backend_stack": {
+      "type": "string",
+      "title": "Backend stack",
+      "description": "Framework the backend-developer subagent should default to.",
+      "default": "fastapi"
+    },
+    "gitlab_token": {
+      "type": "string",
+      "title": "GitLab access token",
+      "description": "Project or personal access token used by the bundled GitLab MCP server. Set this at install time — never paste it into a file.",
+      "sensitive": true
+    }
+  }
+}

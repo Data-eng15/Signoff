@@ -1,0 +1,23 @@
+{
+  "name": "soham-team-kit",
+  "version": "1.0.0",
+  "description": "Reusable agent-team setup for new projects: devops/developer/tester subagents, guardrail hooks, project bootstrap, and MCP wiring.",
+  "owner": {
+    "name": "Soham Dharne",
+    "email": "sohamwork1523@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "signoff",
+      "description": "DevOps/developer/tester subagent team, guardrail hooks, project bootstrap skill, and GitLab MCP wiring. Install per project at --scope project.",
+      "source": "./plugins/signoff",
+      "category": "development"
+    },
+    {
+      "name": "career-coach",
+      "description": "Tracks Soham's own growth across every project using persistent cross-project memory - not project status. Install once at --scope user.",
+      "source": "./plugins/career-coach",
+      "category": "development"
+    }
+  ]
+}

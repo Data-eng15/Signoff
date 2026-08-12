@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "gitlab": {
+      "command": "REPLACE_WITH_YOUR_GITLAB_MCP_SERVER_COMMAND",
+      "args": [],
+      "env": {
+        "GITLAB_TOKEN": "${user_config.gitlab_token}",
+        "GITLAB_PROJECT": "${user_config.project_slug}"
+      }
+    }
+  }
+}
