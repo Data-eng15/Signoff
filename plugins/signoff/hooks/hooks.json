@@ -35,6 +35,15 @@
         ]
       },
       {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/capture-agent-tool-response.sh"
+          }
+        ]
+      },
+      {
         "matcher": "*",
         "hooks": [
           {
