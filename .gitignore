@@ -18,4 +18,7 @@ npm-debug.log*
 
 # Observability dashboard runtime state (per-project, not part of this repo's own history)
 rollup.db
-.claude/logs/
+
+# This repo is the kit itself, not a project the kit gets installed into.
+# A .claude/ showing up here means something got run from the wrong directory.
+.claude/
