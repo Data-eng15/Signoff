@@ -50,7 +50,7 @@ if [ -d "$SCRIPT_DIR/plugins/signoff/scripts/observability" ]; then
   echo "Vendoring the observability dashboard into scripts/observability/..."
   mkdir -p scripts
   cp -rn "$SCRIPT_DIR/plugins/signoff/scripts/observability" scripts/
-  chmod +x scripts/observability/emit_event.py scripts/observability/append_event.sh 2>/dev/null
+  chmod +x scripts/observability/*.sh scripts/observability/*.py 2>/dev/null
 fi
 
 echo ""

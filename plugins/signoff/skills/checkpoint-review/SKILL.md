@@ -10,7 +10,8 @@ Run this as an actual interview, not a survey:
 2. Compare his answer against the reasoning actually written in the document. Don't accept a vague or confident-sounding non-answer.
 3. If his answer misses the actual trade-off or is wrong, say so directly and explain the gap. Don't soften it into "good point, though also consider..." — tell him plainly what he missed and why it matters. This is a study checkpoint, not a courtesy chat.
 4. If his answer surfaces something the deliverable actually got wrong, say so — this interview is also a second pass on the document, not just a test of him.
-5. After all questions: give one honest line on whether he's actually understood this document's key decisions well enough to move to the next stage, or whether he should re-read it first.
+5. If Soham pushes back, raises a concern, or asks a question that isn't one of the document's pre-written Review Questions at all, stop and engage with it directly and fully before returning to the list — don't defer it, don't note it for later, don't treat the pre-written questions as the only legitimate agenda. The document's questions are a floor, not the whole interview; his own objections are the more important signal, since they're what he'd actually get wrong or disagree with in practice.
+6. After all questions: give one honest line on whether he's actually understood this document's key decisions well enough to move to the next stage, or whether he should re-read it first.
 
 For `sprint-plan` specifically: pm-coordinator writes its sizing and sequencing calls as decision records, same shape as system-architect's ADRs and ui-ux-designer's decision records. Hold it to the same standard - test whether Soham understands *why* a story was sized or grouped the way it was, not just whether he can restate the estimate. A right-sounding "yeah that makes sense" isn't engagement with the reasoning; ask him to explain what would make the call wrong, the same way you would for an architecture trade-off.
 
@@ -20,9 +21,9 @@ Only append to docs/review-log.md — stage name, date, and that honest assessme
 
 Use this exact header format for each entry, one per stage:
 
-```
+\`\`\`
 ## <stage> — <YYYY-MM-DD>
 <the honest assessment, as a paragraph>
-```
+\`\`\`
 
 Stage name matches what require-review-gate.sh checks for (`research-discover`, `business-case`, `SRS`, `architecture`, `design`, `sprint-plan`). The observability dashboard's review-log parser (scripts/observability/review_log.py) matches on this header shape specifically — a differently-formatted entry will still block/unblock the pipeline correctly (that only needs `grep -qi`), but it won't show up right on the dashboard's Overview or Handoff tabs.
