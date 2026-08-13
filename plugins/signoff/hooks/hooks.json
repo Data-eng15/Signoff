@@ -4,95 +4,38 @@
       {
         "matcher": "Bash",
         "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/block-main-push.sh"
-          },
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/block-ai-attribution.sh"
-          }
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/block-main-push.sh" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/block-ai-attribution.sh" }
         ]
       },
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py"
-          }
-        ]
-      }
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py" } ] }
     ],
     "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/lint-on-save.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "Agent",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/capture-agent-tool-response.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py"
-          }
-        ]
-      }
+      { "matcher": "Edit|Write", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/lint-on-save.sh" } ] },
+      { "matcher": "Agent", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/capture-agent-tool-response.sh" } ] },
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py" } ] }
     ],
     "SubagentStart": [
       {
         "matcher": "mcp-provisioner|cloud-engineer|business-analyst|pm-coordinator|system-architect|architecture-critic|ui-ux-designer|devops-engineer|frontend-developer|backend-developer",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/require-review-gate.sh"
-          }
-        ]
+        "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/require-review-gate.sh" } ]
       },
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py"
-          }
-        ]
-      }
+      { "matcher": "*", "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py" } ] }
     ],
     "SubagentStop": [
       {
         "matcher": "*",
         "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py"
-          }
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/open-completed-doc.sh" }
         ]
       }
     ],
     "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py"
-          }
-        ]
-      }
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/emit_event.py" } ] }
+    ],
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/observability/start-dashboard.sh" } ] }
     ]
   }
 }
